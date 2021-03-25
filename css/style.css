@@ -15,6 +15,10 @@ body {
   clear: both;
 }
 
+h1, h2, h3, h4 {
+  color: #fff;
+}
+
 /* MAIN */
 main {
   height: calc(100vh - 90px);
@@ -24,14 +28,97 @@ main .side-bar {
   float: left;
   width: 200px;
   height: 100%;
-  background-color: lightsalmon;
+  padding: 20px 20px;
+  background-color: #000;
 }
 
+main .side-bar .logo {
+  width: 80%;
+  padding-bottom: 20px;
+}
+
+main .side-bar .logo img {
+  width: 100%;
+}
+
+main .side-bar .side-menu ul li a:hover,
+main .side-bar .playlists ul li a:hover,
+main .main-inside nav ul li a:hover {
+  color: #fff;
+}
+
+/* SIDE MENU */
+main .side-bar .side-menu ul li {
+  height: 30px;
+  width: 100%;
+  display: inline-block;
+}
+
+main .side-bar .side-menu ul li a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #6D6D6D;
+  font-weight: 600;
+  font-size: 90%;
+}
+
+main .side-bar .side-menu ul li a.active::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  height: 100%;
+  width: 2px;
+  background-color: #B7FF33;
+}
+
+main .side-bar .side-menu ul li a img {
+  height: 30px;
+  padding-right: 5px;
+}
+
+/* SIDE PLAYLISTS */
+main .side-bar .playlists {
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+main .side-bar .playlists h3 {
+  text-transform: uppercase;
+  font-size: 90%;
+  margin-bottom: 15px;
+}
+
+main .side-bar .playlists ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #6D6D6D;
+  font-weight: 600;
+  padding: 7px 0;
+  font-size: 90%;
+}
+
+main .side-bar .playlists ul li a .add {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  background-color: #A3A3A3;
+  color: #000;
+  margin-right: 10px;
+}
+
+/* MAIN-INSIDE */
 main .main-inside {
-  background-color: lightcyan;
   width: calc(100% - 200px);
   height: 100%;
   overflow-y: auto;
+  background-color: #141922;
 }
 
 main .main-inside .upgrade {
@@ -40,17 +127,96 @@ main .main-inside .upgrade {
   right: 0;
   width: calc(100% - 200px);
   height: 90px;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-main .main-inside .debug-content {
-  padding-top: 90px;
+#upg {
+  padding: 10px 30px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 80%;
+}
+
+#upg:hover {
+  transform: scale(1.1);
+}
+
+main .main-inside nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
   width: 100%;
+  margin-top: 90px;
+}
+
+main .main-inside nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+main .main-inside nav ul li a {
+  position: relative;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 80%;
+  font-weight: 600;
+  color: #7F8387;
+}
+
+main .main-inside nav ul li a.active::after {
+  content: '';
+  position: absolute;
+  width: 25%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: #B7FF33;
+}
+
+main .main-inside .debug-content {
+  padding: 30px;
+  width: 100%;
+  color: #fff;
 }
 
 /* FOOTER */
 footer {
+  display: flex;
+  justify-content: space-between;
   height: 90px;
+  background-color: #282828;
+}
+
+footer .info-song, footer .volume {
+  width: 200px;
+  height: 100%;
+  background-color: skyblue;
+}
+
+footer .info-song {
+  flex-shrink: 2;
+}
+
+footer .volume {
+  flex-shrink: 0;
+}
+
+footer .player {
+  width: 60%;
+  height: 100%;
+  flex-shrink: 1;
   background-color: skyblue;
 }
 
