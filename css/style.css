@@ -30,13 +30,13 @@ main {
 }
 
 main .side-bar .side-menu ul li a:hover,
-main .side-bar .playlists ul li a:hover,
+main .side-bar .side-playlists ul li a:hover,
 main .main-inside nav ul li a:hover,
 main .side-bar .side-bar-bottom a:hover {
   color: #fff;
 }
 
-main .side-bar .playlists ul li a.add:hover::before {
+main .side-bar .side-playlists ul li a.add:hover::before {
   background-color: #fff;
 }
 
@@ -45,25 +45,26 @@ main .side-bar {
   float: left;
   width: 200px;
   height: 100%;
-  padding-top: 20px;
-  background-color: #000;
 }
 
 main .side-bar .side-bar-top {
   height: calc(100% - 80px);
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-main .side-bar .logo {
-  width: 80%;
-  padding-left: 20px;
-  height: 90px;
-}
-
-main .side-bar .logo img {
-  width: 100%;
+main .side-bar .side-bar-top .logo-img {
+  padding:20px;
+  flex-shrink: 0;
 }
 
 /* SIDE MENU */
+main .side-bar .side-menu {
+  flex-shrink: 0;
+}
+
 main .side-bar .side-menu ul li {
   height: 30px;
   width: 100%;
@@ -97,32 +98,38 @@ main .side-bar .side-menu ul li a img {
 }
 
 /* SIDE PLAYLISTS */
-main .side-bar .playlists ul {
-  height: 200px;
+main .side-bar .side-bar-top .side-playlists {
+  padding: 20px;
+  max-height: 260px;
+  flex-shrink: 1;
+  max-height: 100%;
   overflow-y: auto;
-  padding-left: 20px;
+}
+
+main .side-bar .side-bar-top .side-playlists h3 {
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+main .side-bar .side-bar-top .side-playlists ul {
   list-style: none;
 }
 
-main .side-bar .playlists h3 {
-  text-transform: uppercase;
+main .side-bar .side-playlists ul li {
+  width: 100%;
   padding-top: 20px;
-  padding-left: 20px;
-  font-size: 90%;
-  margin-bottom: 15px;
 }
 
-main .side-bar .playlists ul li a {
+main .side-bar .side-playlists ul li a {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #6D6D6D;
   font-weight: 600;
-  padding: 7px 0;
   font-size: 90%;
 }
 
-main .side-bar .playlists ul li a.add::before {
+main .side-bar .side-playlists ul li a.add::before {
   content: '+';
   height: 40px;
   width: 40px;
@@ -149,6 +156,9 @@ main .side-bar .side-bar-bottom a{
   font-weight: 600;
 }
 
+main .side-bar .side-bar-bottom h5{
+  color: #fff;
+}
 
 main .side-bar .side-bar-bottom .install {
   display: flex;
