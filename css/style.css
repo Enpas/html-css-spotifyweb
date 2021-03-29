@@ -20,7 +20,7 @@ main::after {
   clear: both;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   color: #fff;
 }
 
@@ -113,6 +113,7 @@ main .side-bar .side-bar-top .side-playlists h3 {
 
 main .side-bar .side-bar-top .side-playlists ul {
   list-style: none;
+  margin-top: -10px;
 }
 
 main .side-bar .side-playlists ul li {
@@ -145,7 +146,7 @@ main .side-bar .side-playlists ul li a.add::before {
 main .side-bar .side-bar-bottom {
   height: 80px;
   width: 200px;
-  padding: 0 20px;
+  padding: 15px 20px 0 15px;
   background-color: #000;
 }
 
@@ -154,10 +155,6 @@ main .side-bar .side-bar-bottom a{
   color: #6D6D6D;
   font-size: 80%;
   font-weight: 600;
-}
-
-main .side-bar .side-bar-bottom h5{
-  color: #fff;
 }
 
 main .side-bar .side-bar-bottom .install {
@@ -278,8 +275,47 @@ footer .player {
 }
 
 footer .player-song, footer .player-audio {
+  display: flex;
+  align-items: center;
   width: 200px;
   height: 100%;
+  min-width: 130px;
+  color: #fff;
+}
+
+footer .progress {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 25%;
+  height: 4px;
+  border-radius: 1.5px;
+  background-color: #fff;
+}
+
+footer .progress:hover {
+  background-color: #B7FF33;
+}
+
+footer .progress:hover .point {
+  display: block;
+}
+
+.progress .point {
+  display: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* PLAYER SONG */
+footer .player-song {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 80%;
+  flex-shrink: 2;
 }
 
 footer .player-song .song-img {
@@ -292,36 +328,119 @@ footer .player-song .song-img img {
   width: 100%;
 }
 
-footer .player-song .info-song p {
+footer .player-song .info-song a,
+footer .player-song .info-song h4 {
+  text-overflow: ellipsis;
+}
+
+footer .player-song .info-song a {
   font-size: 85%;
+  font-weight: bold;
+  text-decoration: none;
   color: #6D6D6D;
+}
+
+footer .player-song .info-song a:hover {
+  text-decoration-line: underline;
+  color: #fff;
 }
 
 footer .player-song .song-commands {
+  flex-wrap: wrap;
+  flex-direction: column;
   color: #6D6D6D;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 footer .player-song .song-commands i {
-  padding: 0 2px;
+  font-size: 115%;
+  padding: 2px 3px;
 }
 
-footer .player-song {
-  display: flex;
-  align-items: center;
-  font-size: 80%;
-  flex-shrink: 2;
+footer .player-song .song-commands i:hover {
+  cursor: pointer;
+  color: #fff;
 }
 
+/* PLAYER AUDIO */
 footer .player-audio {
   flex-shrink: 0;
+  font-size: 80%;
+  justify-content: center;
 }
 
+footer .player .player-audio i {
+  padding: 0 10px;
+}
+
+footer .player .player-audio i:hover {
+  cursor: pointer;
+}
+
+footer .player .player-audio .audio-bar {
+  width: 50%;
+  height: 4px;
+  border-radius: 1.5px;
+  margin-left: 5px;
+  cursor: pointer;
+  background-color: #6D6D6D;
+}
+
+/* PLAYER CONTROL */
 footer .player-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   width: 60%;
   height: 100%;
+  padding: 0 10px;
   flex-shrink: 1;
-  background-color: skyblue;
+}
+
+footer .player-control .control-commands {
+  display: flex;
+  align-items: center;
+}
+
+footer .player-control .control-commands i {
+  padding: 0 12px;
+  color: #fff;
+}
+
+footer .player-control .control-commands i.far {
+  font-size: 180%;
+}
+
+footer .player-control .control-commands i.far:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+footer .player-control .control-commands i.fas:hover {
+  cursor: pointer;
+}
+
+footer .player-control .time {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .player-control .time span {
+  font-weight: bold;
+  color: #fff;
+  font-size: 60%;
+}
+
+footer .player-control .player-bar {
+  width: 60%;
+  height: 4px;
+  border-radius: 1.5px;
+  background-color: #6D6D6D;
+  margin: 0 20px;
+  cursor: pointer;
 }
 
 /* MEDIA-Q */
