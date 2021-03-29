@@ -60,9 +60,21 @@ main .side-bar .side-bar-top .logo-img {
   flex-shrink: 0;
 }
 
+main .side-bar .side-bar-top .logo-img-small {
+  margin: 8px;
+  width: 35px;
+  display: none;
+}
+
 /* SIDE MENU */
 main .side-bar .side-menu {
   flex-shrink: 0;
+}
+
+main .side-bar .side-menu-small {
+  display: none;
+  height: 30px;
+  margin: 8px
 }
 
 main .side-bar .side-menu ul li {
@@ -168,7 +180,7 @@ main .side-bar .side-bar-bottom .install {
 
 main .side-bar .side-bar-bottom .install img {
   height: 15px;
-  padding-right: 5px;
+  padding-right: 8px;
 }
 
 main .side-bar .side-bar-bottom .profile {
@@ -180,11 +192,11 @@ main .side-bar .side-bar-bottom .profile {
 }
 
 main .side-bar .side-bar-bottom .profile img {
-  height: 20px;
-  width: 20px;
+  height: 23px;
+  width: 23px;
   background-color: #6D6D6D;
   border-radius: 50%;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 /* MAIN INSIDE */
@@ -199,6 +211,7 @@ main .main-inside {
 main .main-inside .call-to-action {
   position: fixed;
   width: calc(100% - 200px);
+  z-index: 999;
   height: 90px;
   padding-right: 40px;
   display: flex;
@@ -221,6 +234,7 @@ main .main-inside .call-to-action {
   transform: scale(1.1);
 }
 
+/* MAIN INSIDE NAV */
 main .main-inside nav {
   display: flex;
   align-items: center;
@@ -258,10 +272,84 @@ main .main-inside nav ul li a.active::after {
   background-color: #B7FF33;
 }
 
-main .main-inside .debug-content {
-  padding: 30px;
+/* INSIDE CONTENT */
+main .main-inside .inside-content {
+  padding: 20px;
+}
+
+main .main-inside .inside-content h2 {
+  padding-bottom: 10px;
+}
+
+main .main-inside .inside-content ul {
+  padding-top: 25px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .main-inside .inside-content ul li {
+  width: calc(100% / 6);
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+
+main .main-inside .inside-content ul li .record {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+main .main-inside .inside-content ul li .record .record-img {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+main .main-inside .inside-content ul li .record .record-img .overlay {
+  position: absolute;
+  display: none;
+  height: 99%;
   width: 100%;
-  color: #fff;
+  top: 0;
+  left: 0;
+  color: #FFF;
+  font-size: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+main .main-inside .inside-content ul li .record .record-img .overlay i {
+  position: absolute;
+  font-size: 180%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .main-inside .inside-content ul li .record .record-img:hover .overlay {
+  display: block;
+  cursor: pointer;
+}
+
+main .main-inside .inside-content ul li img {
+  width: 100%;
+}
+
+main .main-inside .inside-content span {
+  color: #6D6D6D;
+  font-size: 80%;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+main .main-inside .inside-content .created-for-doe,
+main .main-inside .inside-content .popular-artist {
+  padding-top: 30px;
+}
+
+main .main-inside .inside-content .popular-artist img,
+main .main-inside .inside-content .popular-artist .overlay {
+  border-radius: 50%;
 }
 
 /* FOOTER */
@@ -444,6 +532,18 @@ footer .player-control .player-bar {
 }
 
 /* MEDIA-Q */
+@media screen and (max-width: 992px) {
+  main .main-inside .inside-content ul li {
+    width: calc(100% / 4);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-inside .inside-content ul li {
+    width: calc(100% / 2);
+  }
+}
+
 @media screen and (max-width: 680px) {
   main .side-bar {
     width: 50px;
@@ -452,4 +552,41 @@ footer .player-control .player-bar {
   main .main-inside, main .main-inside .call-to-action {
     width: calc(100% - 50px);
   }
+
+  main .side-bar .side-bar-top .logo-img-small {
+    display: block;
+  }
+
+  main .side-bar .side-bar-top .logo-img {
+    display: none;
+  }
+
+  main .side-bar .side-menu {
+    display: none;
+  }
+
+  main .side-bar .side-playlists {
+    display: none;
+  }
+  main .side-bar .side-bar-bottom a,
+  main .side-bar .side-bar-bottom h5 {
+    display: none;
+  }
+
+  main .side-bar .side-menu-small {
+    display: block;
+  }
+
 }
+
+@media screen and (max-height: 400px) {
+  main .side-bar .side-bar-bottom {
+    display: none;
+  }
+
+  main .side-bar .side-bar-top {
+    height: 100%;
+  }
+
+}
+
