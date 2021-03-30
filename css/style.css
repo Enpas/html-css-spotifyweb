@@ -452,7 +452,7 @@ footer .player-song .song-commands i:hover {
 
 /* PLAYER AUDIO */
 footer .player-audio {
-  flex-shrink: 0;
+  flex-shrink: 1;
   font-size: 80%;
   justify-content: center;
 }
@@ -553,6 +553,10 @@ footer .player-control .player-bar {
     width: calc(100% - 50px);
   }
 
+  main .main-inside nav ul li {
+    padding: 10px 0 0 25px;
+  }
+
   main .side-bar .side-bar-top .logo-img-small {
     display: block;
   }
@@ -575,6 +579,14 @@ footer .player-control .player-bar {
 
   main .side-bar .side-menu-small {
     display: block;
+  }
+
+  footer .player .player-audio i {
+    padding: 0 5px;
+  }
+
+  footer .player .player-audio .audio-bar {
+    margin-left: 1px;
   }
 
 }
