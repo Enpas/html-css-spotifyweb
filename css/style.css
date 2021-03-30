@@ -77,6 +77,17 @@ main .side-bar .side-menu-small {
   margin: 8px
 }
 
+main .side-bar .side-menu-small ul li a img {
+  opacity: .70;
+}
+main .side-bar .side-menu-small ul li a.active img {
+  opacity: 1;
+}
+main .side-bar .side-menu-small a:hover img {
+  opacity: 1;
+  cursor: pointer;
+}
+
 main .side-bar .side-menu ul li {
   height: 30px;
   width: 100%;
@@ -107,6 +118,16 @@ main .side-bar .side-menu ul li a.active::before {
 main .side-bar .side-menu ul li a img {
   height: 30px;
   padding-right: 5px;
+  opacity: .70;
+}
+
+main .side-bar .side-menu ul li a.active img,
+main .side-bar .side-menu ul li a.active {
+  color: #fff;
+  opacity: 1;
+}
+main .side-bar .side-menu ul li a:hover img {
+  opacity: 1;
 }
 
 /* SIDE PLAYLISTS */
